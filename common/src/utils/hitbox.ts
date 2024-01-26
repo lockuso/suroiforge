@@ -67,7 +67,7 @@ export abstract class BaseHitbox<T extends HitboxType = HitboxType> {
      * @param that The other {@link Hitbox}
      * @return `true` if both {@link Hitbox}es collide
      */
-    abstract collidesWith(that: Hitbox): boolean;
+    abstract collidesWith(that: Hitbox): boolean; // hook these for our collision detection
     /**
      * Resolve collision between {@link Hitbox}es.
      * @param that The other {@link Hitbox}
@@ -78,7 +78,7 @@ export abstract class BaseHitbox<T extends HitboxType = HitboxType> {
      * @param that The other {@link Hitbox}
      * @return A {@link CollisionRecord} with the distance and if both {@link Hitbox}es collide
      */
-    abstract distanceTo(that: Hitbox): CollisionRecord;
+    abstract distanceTo(that: Hitbox): CollisionRecord; // hook these for mod system
     /**
      * Clone this {@link Hitbox}.
      * @return a new {@link Hitbox} cloned from this one
@@ -92,13 +92,13 @@ export abstract class BaseHitbox<T extends HitboxType = HitboxType> {
      * @param orientation The orientation to transform the {@link Hitbox}
      * @return A new {@link Hitbox} transformed by the parameters
      */
-    abstract transform(position: Vector, scale?: number, orientation?: Orientation): Hitbox;
+    abstract transform(position: Vector, scale?: number, orientation?: Orientation): Hitbox; // for our mod system
     /**
      * Scale this {@link Hitbox}.
      * NOTE: This does change the initial {@link Hitbox}
      * @param scale The scale
      */
-    abstract scale(scale: number): void;
+    abstract scale(scale: number): void; // mod system
     /**
      * Check if a line intersects with this {@link Hitbox}.
      * @param a the start point of the line

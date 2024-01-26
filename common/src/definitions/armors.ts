@@ -51,8 +51,8 @@ export const Armors = new ObjectDefinitions<ArmorDefinition>([
     {
         idString: "regular_vest",
         name: "Regular Vest",
-        itemType: ItemType.Armor,
-        armorType: ArmorType.Vest,
+        itemType: ItemType.Armor, //  each item has to have a type (for armor, .Armor)
+        armorType: ArmorType.Vest, // Helmets and vests are differently typed.
         level: 2,
         damageReduction: 0.35
     },
@@ -62,6 +62,6 @@ export const Armors = new ObjectDefinitions<ArmorDefinition>([
         itemType: ItemType.Armor,
         armorType: ArmorType.Vest,
         level: 3,
-        damageReduction: 0.45
+        damageReduction: 0.45 // damage reduction % as a decimal
     }
-]);
+]); // to add our own custom armors, the mod loader  has to have a hook in here, or the object definitions

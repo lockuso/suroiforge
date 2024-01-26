@@ -36,7 +36,7 @@ export const Melees: MeleeDefinition[] = [
         itemType: ItemType.Melee,
         damage: 20,
         obstacleMultiplier: 1,
-        radius: 1.5,
+        radius: 1.5, // how far we can throw hands
         offset: Vec.create(2.5, 0),
         cooldown: 250,
         noDrop: true,

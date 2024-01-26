@@ -17,7 +17,7 @@ export interface BulletOptions {
     readonly clipDistance?: number
 }
 
-type GameObject = {
+type GameObject = { // game object
     readonly position: Vector
     readonly hitbox?: Hitbox
     readonly dead: boolean
@@ -36,7 +36,7 @@ interface Collision {
         readonly normal: Vector
     }
     readonly object: GameObject
-}
+} // players can't collide
 
 export class BaseBullet {
     position: Vector;
@@ -78,14 +78,14 @@ export class BaseBullet {
         if (this.definition.goToMouse && options.clipDistance !== undefined) {
             range = Numeric.clamp(options.clipDistance, 0, this.definition.range);
         }
-        this.maxDistance = (range * (this.rangeVariance + 1)) / (this.reflectionCount + 1);
+        this.maxDistance = (range * (this.rangeVariance + 1)) / (this.reflectionCount + 1); // bullets lose distance the more deflections it goes through
         this.maxDistanceSquared = this.maxDistance ** 2;
 
         this.direction = Vec.create(Math.sin(this.rotation), -Math.cos(this.rotation));
 
         this.velocity = Vec.scale(this.direction, this.definition.speed * (this.rangeVariance + 1));
 
-        this.canHitShooter = (this.definition.shrapnel ?? this.reflectionCount > 0);
+        this.canHitShooter = (this.definition.shrapnel ?? this.reflectionCount > 0); // man, to be fair, this is always true. i think its just conditioned so it can't hit on spawn.
     }
 
     /**
@@ -137,7 +137,7 @@ export class BaseBullet {
         return collisions;
     }
 
-    serialize(stream: SuroiBitStream): void {
+    serialize(stream: SuroiBitStream): void { // sends the bullet data to the bitstream
         Bullets.writeToStream(stream, this.definition);
         stream.writePosition(this.initialPosition);
         stream.writeRotation(this.rotation, 16);

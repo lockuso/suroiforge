@@ -27,7 +27,7 @@ type BaseObjectsNetData = {
 
 export type FullData<Cat extends ObjectCategory> = ObjectsNetData[Cat] & (ObjectsNetData[Cat] extends Fullable<infer S> ? { full: S } : object);
 
-export interface ObjectsNetData extends BaseObjectsNetData {
+export interface ObjectsNetData extends BaseObjectsNetData { // this is how data is formatted in packets
     //
     // Player Data
     //
