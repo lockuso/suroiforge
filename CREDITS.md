@@ -22,4 +22,4 @@
 
 ## Developers (for this fork)
 - lockuso (i own this shit)
-- Hidden
+- Lazer187
