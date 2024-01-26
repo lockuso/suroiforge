@@ -7,6 +7,7 @@ import { Config } from "./config";
 import { Game } from "./game";
 import { stringIsPositiveNumber } from "./utils/misc";
 import { loadTextures } from "./utils/pixi";
+import { splash } from "../../../splash/src/main";
 
 const playButton: JQuery = $("#btn-play-solo");
 
@@ -22,6 +23,7 @@ function disablePlayButton(text: string): void {
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 $(async(): Promise<void> => {
     const game = new Game();
+    splash.bind(game);
 
     void loadTextures().then(enablePlayButton);
 

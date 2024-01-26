@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "lib": ["DOM", "ESNext"],
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Bundler",
+      "outDir": "./dist",
+      "newLine": "lf",
+      "allowSyntheticDefaultImports": true,
+      "useDefineForClassFields": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "allowJs": true,
+      "checkJs": true,
+      "verbatimModuleSyntax": false
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.js"
+    ]
+  }
+  
