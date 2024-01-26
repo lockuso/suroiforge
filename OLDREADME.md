@@ -1,3 +1,5 @@
+# ARCHIVE FOR THE OLD README.MD
+
 <div align="center">
   <img src="client/public/img/backgrounds/github_background.png" alt="Suroi">
   <hr>
